@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodataku</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0093E9, #80D0C7); /* Perubahan warna latar belakang */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      max-width: 450px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #0077b6; /* Warna biru laut */
+      transition: transform 0.3s;
+    }
+    .card img:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      margin: 10px 0;
+      color: #0077b6; /* Warna biru laut */
+      font-size: 24px;
+    }
+    .info {
+      text-align: left;
+      margin-top: 15px;
+    }
+    .info p {
+      font-size: 15px;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .info strong {
+      color: #0077b6; /* Warna biru laut */
+    }
+    .about {
+      margin-top: 15px;
+      padding: 12px;
+      background: #f4f9ff;
+      border-left: 4px solid #0077b6; /* Warna biru laut */
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    a.github-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #24292e;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a.github-link:hover {
+      background: #444c56;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="img/avatar.jpg" alt="Foto Rifki">
+    <h2>Rifki Hadiyan Syamil</h2>
+
+    <div class="info">
+      <p><strong>Status:</strong> Pelajar</p>
+      <p><strong>Umur:</strong> 17 Tahun</p>
+      <p><strong>Hobi:</strong> Belajar Coding,bermain</p>
+      <p><strong>No. Telepon:</strong> +62 12345678</p>
+      <p><strong>Alamat:</strong> Garut, Jawa Barat, Indonesia</p>
+    </div>
+
+    <div class="about">
+      <p>
+         Saya Rifki, seorang pelajar berusia 17 tahun yang gemar belajar hal baru.
+         Saya juga berkeinginan menjadi pribadi yang lebih baik dan bercita cita sukses di bidang pemograman ini.
+      </p>
+    </div>
+
+    <a href="https://github.com/rifkihadiyan" class="github-link" target="_blank">GitHub Saya</a>
+  </div>
+</body>
+</html>
