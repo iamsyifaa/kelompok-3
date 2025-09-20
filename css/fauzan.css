@@ -1,0 +1,101 @@
+/* Reset dan dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right top, #000000dd, #333333cc);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Kartu biodata */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Profil */
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 15px;
+}
+
+.profile h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.profile p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+/* Biodata */
+.biodata h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+.biodata ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.biodata li {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+/* Social links */
+.social {
+  margin-top: 25px;
+}
+
+.social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #00d4ff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 500px) {
+  .card {
+    padding: 25px;
+  }
+
+  .profile h1 {
+    font-size: 1.5rem;
+  }
+
+  .biodata h2 {
+    font-size: 1.2rem;
+  }
+}

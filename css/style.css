@@ -1,101 +1,224 @@
-/* Reset dan dasar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    height: 100vh;
-    background: linear-gradient(to right top, #000000dd, #333333cc);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Kartu biodata */
+main {
+  flex: 1;
+}
+
+/* Animasi global */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  padding: 40px 20px 20px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.title-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+.title-section p {
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.badges span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.badges span:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 0 20px 60px;
+}
+
 .card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    padding: 40px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    text-align: center;
+  background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+  padding: 25px;
+  border-radius: 18px;
+  flex: 1 1 280px;
+  max-width: 300px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
 }
 
-/* Profil */
-.profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    margin-bottom: 15px;
+.card:nth-child(1) {
+  animation-delay: 1s;
+}
+.card:nth-child(2) {
+  animation-delay: 1.3s;
+}
+.card:nth-child(3) {
+  animation-delay: 1.6s;
+}
+.card:nth-child(4) {
+  animation-delay: 1.9s;
+}
+.card:nth-child(5) {
+  animation-delay: 2.2s;
 }
 
-.profile h1 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 25px rgba(79, 172, 254, 0.6);
 }
 
-.profile p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
+.card .foto {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  border: 2px solid #1f3f75;
+  animation: zoomIn 1s ease forwards;
 }
 
-/* Biodata */
-.biodata h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 5px;
+.card .foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.biodata ul {
-    list-style: none;
-    text-align: left;
-    padding: 0;
+.card .foto img:hover {
+  transform: scale(1.1);
 }
 
-.biodata li {
-    margin: 10px 0;
-    font-size: 0.95rem;
+.card h2 {
+  margin: 10px 0 5px;
+  text-align: center;
 }
 
-/* Social links */
-.social {
-    margin-top: 25px;
+.card h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #aaa;
+  margin: 0 0 15px;
+  text-align: center;
 }
 
-.social a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #00d4ff;
-    font-weight: bold;
-    transition: 0.3s;
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.social a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+.links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Responsif */
-@media (max-width: 500px) {
-    .card {
-        padding: 25px;
-    }
+.links a {
+  text-decoration: none;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .profile h1 {
-        font-size: 1.5rem;
-    }
+.links a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+}
 
-    .biodata h2 {
-        font-size: 1.2rem;
-    }
+/* Footer */
+footer {
+  background: #010a16;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+footer a {
+  color: #4facfe;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 8px #00f2fe;
 }
